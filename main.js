@@ -155,9 +155,11 @@ const closeRick = document.getElementById('closeRick');
 
 rickBtn.addEventListener('click', () => {
   rickPopup.classList.remove('hidden');
+  enterSound.pause();
 });
 
 closeRick.addEventListener('click', () => {
   rickPopup.classList.add('hidden');
+  enterSound.play();
 });
 
