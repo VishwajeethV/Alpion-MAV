@@ -1,163 +1,97 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Elite Sci-Tech Prototype</title>
-
-<!-- Fonts + GSAP -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-
-
+  <meta charset="UTF-8">
+  <title>Rocket Project</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div id="gridBg"></div>
-
-<!-- audio elements (put files in /assets/) -->
-<audio id="enterSound" src="assets/enter.mp3" preload="auto"></audio>
-<audio id="bgSound" src="assets/bg-loop.mp3" preload="auto" loop></audio>
-
-<!-- Intro -->
-<div id="intro" aria-hidden="false">
-  <div id="typingText">Ready to dive in?</div>
-  <button id="startBtn" aria-label="Enter site">Enter</button>
-</div>
-
-<!-- Founders cinematic overlay -->
-<div id="foundersIntro" role="dialog" aria-hidden="true">
-  <div class="founderCard" id="card-vish">
-    <img src="assets/Vishwajeeth.jpg" alt="Vishwajeeth photo (place file at assets/Vishwajeeth.jpg)">
-    <div class="meta"><h3>Vishwajeeth V</h3><p>Lead Rocket Engineer</p></div>
-  </div>
-
-  <div class="founderCard" id="card-adhi">
-    <img src="assets/Adhikesav.jpg" alt="Adhikesav photo (place file at assets/Adhikesav.jpg)">
-    <div class="meta"><h3>Adikeshav S</h3><p>Systems & Control Engineer</p></div>
-  </div>
-
-  <div class="founderCard" id="card-mahi">
-    <img src="assets/Mahilesh.jpg" alt="Mahilesh photo (place file at assets/Mahilesh.jpg)">
-    <div class="meta"><h3>Mahilesh</h3><p>Operations & Mission Support</p></div>
-  </div>
-</div>
-
-<!-- Main content (hidden until founders animation finished) -->
-<div id="main" aria-hidden="true">
+  <div id="gridBg"></div>
   <header>
-    <div class="logo">SNP • Morphine Engine</div>
-    <div style="opacity:.6;font-size:.95rem">Prototype • Research • Education</div>
+    <div class="logo">🚀 Rocket Project</div>
+    <nav id="nav">
+      <a class="nav-item" href="#about">About</a>
+      <a class="nav-item" href="#team">Team</a>
+      <a class="nav-item" href="#gallery">Gallery</a>
+      <a class="nav-item" href="#contact">Contact</a>
+    </nav>
   </header>
-
-  <div id="nav" aria-hidden="false">
-    <div class="nav-item" data-target="product">Product</div>
-    <div class="nav-item" data-target="vision">Vision</div>
-    <div class="nav-item" data-target="propulsion">Propulsion</div>
-    <div class="nav-item" data-target="safety">Safety</div>
-    <div class="nav-item" data-target="ai">AI / Landing</div>
-    <div class="nav-item" data-target="blog">Blog</div>
-  </div>
-
-  <!-- Product -->
-  <section id="product">
-    <div class="title">Rocket Prototype</div>
-    <p class="sub">High-fidelity prototype featuring AI-assisted landing and a fuel-fed propulsion core. (Add high-res images or video below)</p>
-
-    <div class="panel">
-      <div class="media-preview blog-card">
-        <img src="assets/placeholder-rocket.jpg" alt="Rocket placeholder - add rocket images to assets" style="width:100%;height:100%;object-fit:cover;">
-      </div>
-      <div style="max-width:420px;text-align:left;">
-        <h4 style="margin:0 0 12px 0;">Prototype highlights</h4>
-        <ul style="text-align:left;color:rgba(0,255,127,0.85);line-height:1.6;">
-          <li>AI-integrated landing stabilization</li>
-          <li>3D printed SS304L nozzle components</li>
-          <li>Modular propulsion testbed</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision -->
-  <section id="vision">
-    <div class="title">Project Vision</div>
-    <p class="sub">Democratize aerospace research and bring scalable student innovation to competition arenas and real-world tests.</p>
-  </section>
-
-  <!-- Propulsion -->
-  <section id="propulsion">
-    <div class="title">Propulsion & Materials</div>
-    <div class="panel" style="max-width:1000px;">
-      <div class="blog-card" style="flex:1;">
-        <h4>Materials & Hardware</h4>
-        <p>3D-printed SS 304L structural elements, Teflon seals, A2212 BLDC actuators and MPU-6050 IMU for stabilization and telemetry.</p>
-      </div>
-      <div class="blog-card" style="flex:1;">
-        <h4>Chemistry & Performance</h4>
-        <p>Engine testing used controlled propellant concentrations. Parent institution provided safety protocols and lab supervision for high-concentration propellants (80%–99.9%).</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Safety -->
-  <section id="safety">
-    <div class="title">Safety & Protocol</div>
-    <p class="sub">All chemical handling and testing followed school-supervised protocols and expert guidance to minimize risk during development and experiments.</p>
-  </section>
-
-  <!-- AI -->
-  <section id="ai">
-    <div class="title">AI Assisted Landing</div>
-    <p class="sub">AI algorithms were used for descent control and stabilization — a key capability that brings student-built projects closer to practical demonstration.</p>
-  </section>
-
-  <!-- Blog (subdivided content and YouTube preview) -->
-  <section id="blog">
-    <div class="title">Blog — How SNP Helped Build The Morphine</div>
-
-    <div class="panel" style="flex-direction:column;align-items:center;">
-      <div class="blog-card" style="max-width:1000px;">
-        <h4>Overview</h4>
-        <p>The rocket engine was created through constant hard work by <strong>Vishwajeeth V</strong> and supported by <strong>Adikeshav S</strong> of XI Topaz. Shree Niketan Patasala, West Tambaram, provided facilities, mentorship and technical backing.</p>
-
-        <h4>School's role</h4>
-        <p>The school provided workshop access, connected students with specialist teachers, and enforced safety procedures that allowed high-concentration propellant experimentation under supervision.</p>
-
-        <h4>Technical highlights</h4>
-        <p>Core materials and components include 3D-printed SS304L, Teflon seals, A2212 BLDC motors and an MPU-6050 IMU. The project applies CBSE concepts from classes 9–11: Newton’s laws, thermodynamics, thermochemistry, combustion and projectile motion.</p>
-
-        <h4>Competitions & verification</h4>
-        <p>References and results were verified by SNP management. The school enabled participation at events like the CBSE Science Expo.</p>
-      </div>
-
-      <!-- Video preview / embed -->
-      <div style="margin-top:18px;width:100%;max-width:900px;">
-        <div class="media-preview">
-          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/0x8x2FamBlk?rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <main id="main">
+    <section id="about">
+      <div class="title">About the Rocket Project</div>
+      <div class="sub">We are a passionate team building cutting-edge model rockets. Our mission: Reach new heights, inspire new minds.</div>
+      <div class="panel">
+        <div class="blog-card">
+          <h4>Innovation</h4>
+          <p>Our custom rocket design incorporates lightweight materials and advanced telemetry.</p>
+        </div>
+        <div class="blog-card">
+          <h4>Collaboration</h4>
+          <p>Students, engineers, and enthusiasts working together for launch success.</p>
         </div>
       </div>
+    </section>
+    <section id="team">
+      <div class="title">Meet the Team</div>
+      <div class="panel">
+        <div class="founderCard">
+          <img src="https://randomuser.me/api/portraits/men/99.jpg" alt="Team Member">
+          <div class="meta">
+            <h3>Alex Jetson</h3>
+            <p>Lead Engineer</p>
+          </div>
+        </div>
+        <div class="founderCard">
+          <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Team Member">
+          <div class="meta">
+            <h3>Taylor Nova</h3>
+            <p>Propulsion Specialist</p>
+          </div>
+        </div>
+        <div class="founderCard">
+          <img src="https://randomuser.me/api/portraits/men/21.jpg" alt="Team Member">
+          <div class="meta">
+            <h3>Sam Cosmos</h3>
+            <p>Avionics & Telemetry</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="gallery">
+      <div class="title">Gallery</div>
+      <div class="panel">
+        <div class="media-preview">
+          <img style="width:100%;height:100%;object-fit:cover" src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=700&q=80" alt="Rocket 1">
+        </div>
+        <div class="media-preview">
+          <img style="width:100%;height:100%;object-fit:cover" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" alt="Rocket 2">
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="title">Contact Us</div>
+      <div class="sub">Want to collaborate or learn more? Reach out to our team!</div>
+      <div>
+        <a href="mailto:team@rocketproject.com" class="nav-item" style="display:inline-block;">Email Us</a>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div style="text-align:center;padding:24px;">
+      <button id="rickrollBtn" style="border:none;background:var(--neon);color:#000;font-weight:700;padding:12px 36px;border-radius:10px;cursor:pointer;box-shadow:0 0 14px var(--neon, #00ff7f);font-size:1.08rem;">
+        Do not click me!
+      </button>
+      <div style="color:var(--neon, #00ff7f);font-size:.92rem;margin-top:14px;">&copy; 2025 Rocket Project Team</div>
     </div>
-  </section>
-
-  <footer style="padding:40px 20px;text-align:center;color:rgba(0,255,127,0.7);">
-    Credits: Pranav R • SNP Labs
   </footer>
-</div>
-
-<!-- Chat -->
-<button id="chatBtn" title="Chat (VIPRADMA_07)">◉</button>
-<div id="chatBox" role="dialog" aria-hidden="true">
-  <strong>VIPRADMA_07</strong>
-  <button class="qBtn" onclick="reply(this)">What is this project?</button>
-  <div class="answer"></div>
-  <button class="qBtn" onclick="reply(this)">Who built this?</button>
-  <div class="answer"></div>
-  <button class="qBtn" onclick="reply(this)">Future goals?</button>
-  <div class="answer"></div>
-</div>
-
-<script src="main.js"></script>
+  <div id="rickrollModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h2>Never Gonna Give You Up!</h2>
+      <iframe width="420" height="236" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
