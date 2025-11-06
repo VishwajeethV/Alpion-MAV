@@ -3,23 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ALPION - MAV</title>
-<link rel="icon" type="image/png" href="favicon.png">
+<title>Elite Sci-Tech Prototype</title>
 
 <!-- Fonts + GSAP -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
+
 
 </head>
 <body>
 
 <div id="gridBg"></div>
 
-<!-- audio elements (put files in /) -->
-<audio id="enterSound" src="enter.mp3" preload="auto"></audio>
-<audio id="bgSound" src="bg-loop.mp3" preload="auto" loop></audio>
+<!-- audio elements (put files in /assets/) -->
+<audio id="enterSound" src="assets/enter.mp3" preload="auto"></audio>
+<audio id="bgSound" src="assets/bg-loop.mp3" preload="auto" loop></audio>
 
 <!-- Intro -->
 <div id="intro" aria-hidden="false">
@@ -30,29 +29,29 @@
 <!-- Founders cinematic overlay -->
 <div id="foundersIntro" role="dialog" aria-hidden="true">
   <div class="founderCard" id="card-vish">
-    <img src="Vishwajeeth.jpg" alt="Vishwajeeth photo (place file at Vishwajeeth.jpg)">
+    <img src="assets/Vishwajeeth.jpg" alt="Vishwajeeth photo (place file at assets/Vishwajeeth.jpg)">
     <div class="meta"><h3>Vishwajeeth V</h3><p>Lead Rocket Engineer</p></div>
   </div>
 
   <div class="founderCard" id="card-adhi">
-    <img src="Adhikesav.jpg" alt="Adhikesav photo (place file at Adhikesav.jpg)">
+    <img src="assets/Adhikesav.jpg" alt="Adhikesav photo (place file at assets/Adhikesav.jpg)">
     <div class="meta"><h3>Adikeshav S</h3><p>Systems & Control Engineer</p></div>
   </div>
 
   <div class="founderCard" id="card-mahi">
-    <img src="Mahilesh.jpg" alt="Mahilesh photo (place file at Mahilesh.jpg)">
+    <img src="assets/Mahilesh.jpg" alt="Mahilesh photo (place file at assets/Mahilesh.jpg)">
     <div class="meta"><h3>Mahilesh</h3><p>Operations & Mission Support</p></div>
   </div>
 </div>
 
 <!-- Main content (hidden until founders animation finished) -->
-<div id="main" style = "position: fixed" aria-hidden="true">
+<div id="main" aria-hidden="true">
   <header>
     <div class="logo">SNP • Morphine Engine</div>
     <div style="opacity:.6;font-size:.95rem">Prototype • Research • Education</div>
   </header>
 
-  <div id="nav" style = aria-hidden="false">
+  <div id="nav" aria-hidden="false">
     <div class="nav-item" data-target="product">Product</div>
     <div class="nav-item" data-target="vision">Vision</div>
     <div class="nav-item" data-target="propulsion">Propulsion</div>
@@ -68,7 +67,7 @@
 
     <div class="panel">
       <div class="media-preview blog-card">
-        <img src="placeholder-rocket.jpg" alt="Rocket placeholder - add rocket images to assets" style="width:100%;height:100%;object-fit:cover;">
+        <img src="assets/placeholder-rocket.jpg" alt="Rocket placeholder - add rocket images to assets" style="width:100%;height:100%;object-fit:cover;">
       </div>
       <div style="max-width:420px;text-align:left;">
         <h4 style="margin:0 0 12px 0;">Prototype highlights</h4>
@@ -143,30 +142,10 @@
   </section>
 
   <footer style="padding:40px 20px;text-align:center;color:rgba(0,255,127,0.7);">
-    Credits: Created - Pranav R • SNP Labs
-             Developed - Vishwajeeth V
-    <!-- Rickroll Button -->
-    <button id="rick" onclick="rick()" class="area51-btn">DONT CLICK</button>
-
-    <!-- Popup Modal -->
-    <div id="rickPopup" class="rickroll-modal hidden">
-      <div class="rickroll-content">
-        <h2>🎵 Never gonna give you up... 🎵</h2>
-        <iframe
-          width="400" height="225"
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
-          title="Rick Astley - Never Gonna Give You Up"
-          frameborder="0"
-          allow="autoplay; encrypted-media"
-          allowfullscreen>
-        </iframe>
-        <button id="close" onclick="close()" class="area51-btn">Close</button>
-      </div>
-    </div>
+    Credits: Pranav R • SNP Labs
   </footer>
 </div>
 
-  
 <!-- Chat -->
 <button id="chatBtn" title="Chat (VIPRADMA_07)">◉</button>
 <div id="chatBox" role="dialog" aria-hidden="true">
@@ -182,5 +161,3 @@
 <script src="main.js"></script>
 </body>
 </html>
-
-
