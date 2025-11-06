@@ -148,7 +148,4 @@
 
   // Accessibility: allow Enter key to trigger start
   startBtn.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') startBtn.click(); });
- //rickroll
 
-  function rick() {
-    
