@@ -149,17 +149,5 @@
   // Accessibility: allow Enter key to trigger start
   startBtn.addEventListener('keyup', (e)=>{ if(e.key === 'Enter') startBtn.click(); });
  //rickroll
-const rickBtn = document.getElementById('rickButton');
-const rickPopup = document.getElementById('rickPopup');
-const closeRick = document.getElementById('closeRick');
 
-rickBtn.addEventListener('click', () => {
-  rickPopup.classList.remove('hidden');
-  enterSound.pause();
-});
-
-closeRick.addEventListener('click', () => {
-  rickPopup.classList.add('hidden');
-  enterSound.play();
-});
 
